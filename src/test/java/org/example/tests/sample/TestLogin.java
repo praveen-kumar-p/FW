@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 
 public class TestLogin {
 
-
     @BeforeTest
     public void setUp(){
         DriverManager.init();
@@ -20,6 +19,7 @@ public class TestLogin {
         WebDriver driver = DriverManager.getDriver();
         driver.get("https://app.vwo.com/#/login");
         driver.manage().window().maximize();
+        System.out.println(driver.getTitle());
         driver.findElement(By.id("login-username")).sendKeys("admin@admin.com");
         driver.findElement(By.id("login-password")).sendKeys("password@321");
 
